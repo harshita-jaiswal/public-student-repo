@@ -1,16 +1,17 @@
 // Add your code here
 const elem = document.querySelector("input");
+const paragraphDiv = document.getElementById("paragraph");
 
-const handleKeyDown = function handleInputKeyDown(event) {
-    const paragraphDiv = document.getElementById("paragraph");
+const handleKeyDown = (event) => {
     const wordToHighlight = event.target.value;
-    const text = paragraphDiv.innerHTML;
-    const words = text.split(/\b/);
-    const highlightedWords = words.map((word) => {
+    const words = paragraphDiv.textContent.split(/\b/);
+    const highlightedWords = []
+    words.forEach((word) => {
         if (word.toLowerCase() === wordToHighlight.toLowerCase()) {
-            return `<span class="bg-warning">${word}</span>`;
+            highlightedWords.push(`<span class="bg-warning">${word}</span>`);
+        } else {
+            highlightedWords.push(word);
         }
-        return word;
     });
 
     paragraphDiv.innerHTML = highlightedWords.join("");
