@@ -22,3 +22,6 @@ form.onsubmit = (event) => {
         console.warn("Please enter full name and email to submit the form");
     }
 };
+
+// Referred https://getbootstrap.com/docs/5.0/forms/overview/
+// Referred https://www.javatpoint.com/how-to-get-all-checked-checkbox-value-in-javascript

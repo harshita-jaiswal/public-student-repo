@@ -17,3 +17,5 @@ const handleKeyDown = (event) => {
     paragraphDiv.innerHTML = highlightedWords.join("");
 };
 elem.addEventListener("keydown", handleKeyDown);
+
+// Referred https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event

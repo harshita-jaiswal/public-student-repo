@@ -32,3 +32,6 @@ startOrStopButton.onclick = () => {
         intervalEle.setAttribute("disabled", true);
     }
 };
+
+// Referred https://developer.mozilla.org/en-US/docs/Web/API/setInterval
+// Referred https://css-tricks.com/the-power-of-rgba/
