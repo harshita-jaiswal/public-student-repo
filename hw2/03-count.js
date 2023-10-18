@@ -5,7 +5,7 @@ const paragraphDiv = document.getElementById("paragraph");
 const handleKeyDown = (event) => {
     const wordToHighlight = event.target.value;
     const words = paragraphDiv.textContent.split(/\b/);
-    const highlightedWords = []
+    const highlightedWords = [];
     words.forEach((word) => {
         if (word.toLowerCase() === wordToHighlight.toLowerCase()) {
             highlightedWords.push(`<span class="bg-warning">${word}</span>`);
