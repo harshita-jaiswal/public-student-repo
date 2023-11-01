@@ -12,7 +12,7 @@ const dataToDOM = (data) => {
     //character image
     let image = document.createElement("img");
     image.src = data.imageUrl;
-    image.alt = `picture of ${data.image}`;
+    image.alt = `picture of ${data.fullName}`;
     image.height = 250;
     image.width = 200;
     card.append(image);
