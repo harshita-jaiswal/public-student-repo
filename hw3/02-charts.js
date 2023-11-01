@@ -46,7 +46,7 @@ const fetchApiData = async (url) => {
     const response = await fetch(url);
     const data = await response.json();
 
-    let familyHouses = data.map((character) => character.family);
+    const familyHouses = data.map((character) => character.family);
 
     familyHouses.forEach((house, index) => {
       if (nameCorrections[house]) {
