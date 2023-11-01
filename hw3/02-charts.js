@@ -30,7 +30,7 @@ const borderColors = [
 const url = 'https://thronesapi.com/api/v2/Characters';
 
 
-// create a mapping of name corrections
+// mapping of name corrections
 const nameCorrections = {
   "Lanister": "House Lannister",
   "Targaryan": "House Targaryen",
@@ -69,8 +69,8 @@ const fetchApiData = async (url) => {
       return acc;
     }, {});
 
-    let counts = Object.values(houseCounts);
-    let labels = Object.keys(houseCounts);
+    const counts = Object.values(houseCounts);
+    const labels = Object.keys(houseCounts);
 
     return { labels, counts };
   } catch (error) {
@@ -81,6 +81,7 @@ const fetchApiData = async (url) => {
 fetchApiData(url).then(({ labels, counts }) =>
   renderChart(labels, counts)
 );
+
 const renderChart = (labels, count) => {
   const donutChart = document.querySelector('.donut-chart');
 
