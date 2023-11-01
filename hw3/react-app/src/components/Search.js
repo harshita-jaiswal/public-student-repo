@@ -38,21 +38,23 @@ const Search = () => {
     const createCard = (data, index) => {
         return (
             <div key={index} className="card">
-                <img src={data.imageUrl} alt={data.fullName} height={250} width={225} />
+                <img src={data.imageUrl} alt={'photograph of ' + data.fullName} height={250} width={225} />
                 <h2>{data.fullName}</h2>
             </div>
         )
     }
 
     return (
-        <>
+        <div>
             <Navbar />
             <div className="search">
                 <h1 className="searchTitle">Search for Characters</h1>
                 <div className="searchBarWrapper">
+                    <label className="searchLabel" for="search">Search</label>
                     <input
                         className="searchBar"
                         type="text"
+                        id="search"
                         placeholder="Search Character"
                         value={searchCharacter}
                         onChange={(e) => setSearchCharacter(e.target.value)}
@@ -71,7 +73,7 @@ const Search = () => {
                     ) : <div className="noResult">{noResult}</div>
                 }
             </div>
-        </>
+        </div>
     );
 };
 

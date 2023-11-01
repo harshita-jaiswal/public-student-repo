@@ -87,6 +87,10 @@
   justify-content: center;
 }
 
+.searchLabel {
+  visibility: hidden;
+}
+
 .searchBar {
   width: 60%;
   height: 40px;
@@ -95,6 +99,7 @@
   border: 1px solid #e5e5e5;
   padding: 2px 18px;
 }
+
 .searchBar:focus {
   border-color: #66afe9;
   outline: 0;
@@ -104,9 +109,10 @@
 }
 .searchBtn {
   padding: 14px 26px;
-  background-color: #357be1;
+  background-color: #282c34;
   box-shadow: none;
   color: #ffffff;
+  font-weight: 600;
   border-radius: 8px;
   border: none;
   cursor: pointer;
