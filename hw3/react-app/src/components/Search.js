@@ -8,6 +8,7 @@ const Search = () => {
     const [characters, setCharacters] = useState([]);
     const [searchResult, setSearchResult] = useState([]);
     const [searchCharacter, setSearchCharacter] = useState("");
+    const [noResult, setNoResult] = useState("")
 
     useEffect(() => {
         const fetchApiData = async () => {
@@ -25,7 +26,13 @@ const Search = () => {
         const matchedCharacters = characters.filter((character) =>
             character.fullName.toLowerCase().includes(searchCharacter.toLowerCase())
         );
-        setSearchResult(matchedCharacters);
+        if (matchedCharacters.length === 0) {
+            setNoResult("No Data Found!!! Try Again.")
+            setSearchResult([])
+        } else {
+            setNoResult("")
+            setSearchResult(matchedCharacters)
+        }
     };
 
     const createCard = (data, index) => {
@@ -53,7 +60,7 @@ const Search = () => {
                     <button className="searchBtn" onClick={handleSearch}>Search</button>
                 </div>
                 {
-                    searchResult && (
+                    searchResult.length ? (
                         <div className="searchResultWrapper">
                             {
                                 searchResult?.map((ele, index) => {
@@ -61,7 +68,7 @@ const Search = () => {
                                 })
                             }
                         </div>
-                    )
+                    ) : <div className="noResult">{noResult}</div>
                 }
             </div>
         </>

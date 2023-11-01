@@ -123,4 +123,14 @@
   margin: 10px 10px 15px;
   border: 1px solid #e5e5e5;
   text-align: center;
+  border-radius: 5px;
+  overflow: hidden;
+  font-size: 18px;
+}
+.noResult {
+  text-align: center;
+  margin: 50px 0;
+  font-weight: bold;
+  font-size: 20px;
+  color: #dd423f;
 }
