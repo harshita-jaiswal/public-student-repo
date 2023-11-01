@@ -28,9 +28,9 @@ const Search = () => {
         setSearchResult(matchedCharacters);
     };
 
-    const createCard = (data) => {
+    const createCard = (data, index) => {
         return (
-            <div className="card">
+            <div key={index} className="card">
                 <img src={data.imageUrl} alt={data.fullName} height={250} width={225} />
                 <h2>{data.fullName}</h2>
             </div>
@@ -57,11 +57,7 @@ const Search = () => {
                         <div className="searchResultWrapper">
                             {
                                 searchResult?.map((ele, index) => {
-                                    return (
-                                        <div>
-                                            {createCard(ele)}
-                                        </div>
-                                    )
+                                    return createCard(ele, index)
                                 })
                             }
                         </div>
