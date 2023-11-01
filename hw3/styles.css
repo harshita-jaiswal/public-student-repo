@@ -17,3 +17,25 @@ h1 {
   border-radius: 0.8rem;
   background-color: var(--white);
 }
+
+.container {
+  margin: 20px;
+}
+.listWrapper {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card {
+  max-width: 235px;
+  margin: 20px 10px;
+  padding: 5px;
+  text-align: center;
+}
+.card:hover {
+  background-color: var(--blue);
+}
+.title {
+  font-weight: bold;
+}
