@@ -78,9 +78,8 @@ const fetchApiData = async (url) => {
   }
 };
 
-fetchApiData(url).then(({ labels, counts }) => {
+fetchApiData(url).then(({ labels, counts }) =>
   renderChart(labels, counts)
-}
 );
 const renderChart = (labels, count) => {
   const donutChart = document.querySelector('.donut-chart');
