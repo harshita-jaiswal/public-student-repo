@@ -1,0 +1,142 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* navbar */
+.navbar {
+  background-color: #282c34;
+  height: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navLink {
+  color: #ffffff;
+  margin: 0 15px;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+/* Home */
+
+.home {
+  text-align: center;
+}
+.homeContent {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Chart-Houses */
+
+.chartTitle {
+  text-align: center;
+}
+
+/* Search */
+
+.search {
+  margin: 20px 10px;
+}
+
+.searchTitle {
+  text-align: center;
+}
+
+.searchBarWrapper {
+  margin: 0px 30px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.searchLabel {
+  visibility: hidden;
+}
+
+.searchBar {
+  width: 60%;
+  height: 40px;
+  border-radius: 8px;
+  margin: 10px 20px;
+  border: 1px solid #e5e5e5;
+  padding: 2px 18px;
+}
+
+.searchBar:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%),
+    0 0 8px rgb(102 175 233 / 60%);
+  box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%);
+}
+.searchBtn {
+  padding: 14px 26px;
+  background-color: #282c34;
+  box-shadow: none;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.searchResultWrapper {
+  display: flex;
+  justify-content: center;
+  margin: 40px 10px 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 10px 10px 15px;
+  border: 1px solid #e5e5e5;
+  text-align: center;
+  border-radius: 5px;
+  overflow: hidden;
+  font-size: 18px;
+}
+.noResult {
+  text-align: center;
+  margin: 50px 0;
+  font-weight: bold;
+  font-size: 20px;
+  color: #dd423f;
+}

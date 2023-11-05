@@ -29,17 +29,70 @@ const borderColors = [
 // url for the Thrones API
 const url = 'https://thronesapi.com/api/v2/Characters';
 
-const renderChart = () => {
+
+// mapping of name corrections
+const nameCorrections = {
+  "Lanister": "House Lannister",
+  "Targaryan": "House Targaryen",
+  "Unkown": "Unknown",
+  "House Lanister": "House Lannister",
+  "None": "Unknown",
+  "": "Unknown"
+};
+
+//fetch api
+const fetchApiData = async (url) => {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+
+    const familyHouses = data.map((character) => character.family);
+
+    familyHouses.forEach((house, index) => {
+      if (nameCorrections[house]) {
+        familyHouses[index] = nameCorrections[house];
+      }
+    });
+
+    const houseCounts = familyHouses.reduce((acc, house) => {
+      let existingHouse = false;
+      for (let key in acc) {
+        if (key.includes(house)) {
+          acc[key] += 1;
+          existingHouse = true;
+          break;
+        }
+      }
+      if (!existingHouse) {
+        acc[house] = 1;
+      }
+      return acc;
+    }, {});
+
+    const counts = Object.values(houseCounts);
+    const labels = Object.keys(houseCounts);
+
+    return { labels, counts };
+  } catch (error) {
+    console.log("Error: ", error);
+  }
+};
+
+fetchApiData(url).then(({ labels, counts }) =>
+  renderChart(labels, counts)
+);
+
+const renderChart = (labels, count) => {
   const donutChart = document.querySelector('.donut-chart');
 
   new Chart(donutChart, {
     type: 'doughnut',
     data: {
-      labels: ['label', 'label', 'label', 'label'],
+      labels: labels,
       datasets: [
         {
-          label: 'My First Dataset',
-          data: [1, 12, 33, 5],
+          label: 'Count:',
+          data: count,
           backgroundColor: backgroundColors,
           borderColor: borderColors,
           borderWidth: 1,
